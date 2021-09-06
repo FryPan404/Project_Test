@@ -139,12 +139,6 @@
   </div>
 </div>
 
-
-
-        
-      </div>
-    </div>
-  </div>
   <footer class="footer text-center"> 2021 © FryPan Admin brought to you by 
             </footer>
             <!-- ============================================================== -->
