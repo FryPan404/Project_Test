@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <link rel="stylesheet" href="<?php echo base_url().'assets/datatables/css/jquery.dataTables.min.css' ?>">
-    
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/sweetalert2.min.css') ?>">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poopins:wght@300;400;500;600&display=swap');
 

@@ -81,10 +81,17 @@ class Admin extends CI_Controller {
             ];
             $where = $this->input->post('id');
             $this->db->where('Id',$where);
-            $this->db->update('tbl_student',$data);
-            $where1 = $this->input->post('reg_number');
-            $this->db->where('reg_number',$where1);
-            $this->db->update('tbl_users',$data1);
+            $success = $this->db->update('tbl_student',$data);
+            if ($success) {
+                echo '1';
+            } else {
+                echo '0';
+            }
+            
+            
+            // $where1 = $this->input->post('reg_number');
+            // $this->db->where('reg_number',$where1);
+            // $this->db->update('tbl_users',$data1);
             
     
     }
@@ -121,11 +128,19 @@ class Admin extends CI_Controller {
     public function delete(){
      
         $where = $this->input->post('id_mhs');
-        $this->db->where('Id',$where);
-        $this->db->delete('tbl_student');
-        $where1 = $this->input->post('nim');
-        $this->db->where('reg_number',$where1);
-        $this->db->delete('tbl_users');
+        $this->db->where('Id',$where);       
+        if ($this->db->delete('tbl_student')) {
+            $where1 = $this->input->post('nim');
+            $this->db->where('reg_number',$where1);
+           if ( $this->db->delete('tbl_users')) {
+               echo '1';
+           } else {
+               echo '0';
+           }
+        } else {
+            echo '0';
+        }
+        
         
     }
     

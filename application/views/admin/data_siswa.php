@@ -142,9 +142,10 @@
 
   
             <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script src="https://cdn.datatables.net/1.11.0/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
- 
+            <script src="https://cdn.datatables.net/1.11.0/js/jquery.dataTables.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+            <script src="<?php echo base_url('assets/js/sweetalert2.all.min.js') ?>"></script>
+    
  
 <script type="text/javascript">
  
@@ -153,7 +154,6 @@ var table;
 $(document).ready(function() {
   LoadData();
     
- 
 });
 
 function LoadData(){
@@ -201,8 +201,24 @@ $('#save').click(function(){
         type: 'POST',
         url: "<?php echo base_url('admin/edit') ?>",
         data: data,
-        success: function(){
+        success: function(data){
+          if (data == '1') {
+            Swal.fire({
+           title: 'Success',
+           text: 'Data Updated!',
+           icon: 'success',
+           confirmButtonText: 'OK'
+           });
             LoadData();
+          } else {
+            Swal.fire({
+           title: 'Error',
+           text: 'Data Is Not Updated!',
+           icon: 'error',
+           confirmButtonText: 'OK'
+           });
+          }
+           
         }
     });
 });
@@ -222,9 +238,19 @@ $('#save-add').click(function(){
             console.log(data);
             if(data == '1'){
               LoadData();
-              alert('sukses');
+              Swal.fire({
+              title: 'Success',
+              text: 'Data Saved!',
+              icon: 'success',
+              confirmButtonText: 'OK'
+              });
             }else{
-              alert('gagal');
+              Swal.fire({
+              title: 'Error',
+              text: 'Data Is Not Saved!',
+              icon: 'error',
+              confirmButtonText: 'OK'
+              });
             }
         }
   });
@@ -248,8 +274,22 @@ $('#delete-btn').click(function(){
     url: "<?php echo base_url('admin/delete') ?>",
     data: data,
     success: function(data){
-
-            LoadData();
+      if(data == '1'){
+              LoadData();
+              Swal.fire({
+              title: 'Success',
+              text: 'Data Deleted!',
+              icon: 'warning',
+              confirmButtonText: 'OK'
+              });
+            }else{
+              Swal.fire({
+              title: 'Error',
+              text: 'Data Is Not Deleted!',
+              icon: 'error',
+              confirmButtonText: 'OK'
+              });
+            }
         }
   });
 });
