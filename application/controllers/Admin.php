@@ -80,13 +80,9 @@ class Admin extends CI_Controller {
                 'name'    => $this->input->post('name')
             ];
             $where = $this->input->post('id');
-            $this->db->where('Id',$where);
-            $success = $this->db->update('tbl_student',$data);
-            if ($success) {
-                echo '1';
-            } else {
-                echo '0';
-            }
+           echo $this->M_Siswa->update_student($data,$where);
+
+            
             
             
             // $where1 = $this->input->post('reg_number');
@@ -96,50 +92,20 @@ class Admin extends CI_Controller {
     
     }
 
-    public function add(){
-        // $this->form_validation->set_rules('reg_number','No Induk','required|trim|is_unique[tbl_users.reg_number]',[
-		// 	'is_unique' => 'This No Induk has already registered!'
-		// ]);
-        // $this->form_validation->set_rules('reg_number','No Induk','required|trim|is_unique[tbl_student.reg_number]',[
-		// 	'is_unique' => 'This No Induk has already registered!'
-		// ]);
- 
+    public function add(){ 
         $data = [
             'reg_number' => $this->input->post('reg_number'),
             'name' => $this->input->post('name'),
             'class' => $this->input->post('class'),
             'major' => $this->input->post('major')
-        ];
-        $data1 = [
-            'name' =>$this->input->post('name'),
-            'reg_number'=>$this->input->post('reg_number')
-        ];
-      if( $this->db->insert('tbl_student',$data)){
-        $this->db->insert('tbl_users',$data1);
-          echo '1';
-      }
-      else{
-          echo '0';
-      }
-        
-        
+        ];  
+        echo $this->M_Siswa->add($data);
     }
 
     public function delete(){
      
         $where = $this->input->post('id_mhs');
-        $this->db->where('Id',$where);       
-        if ($this->db->delete('tbl_student')) {
-            $where1 = $this->input->post('nim');
-            $this->db->where('reg_number',$where1);
-           if ( $this->db->delete('tbl_users')) {
-               echo '1';
-           } else {
-               echo '0';
-           }
-        } else {
-            echo '0';
-        }
+        echo $this->M_Siswa->delete($where);
         
         
     }
@@ -223,12 +189,7 @@ class Admin extends CI_Controller {
 
         ];
         $where = $this->input->post('id');
-            $this->db->where('reg_number',$where);
-        if(  $this->db->update('tbl_users',$data)){
-            echo '1';
-        }else{
-            echo '2';
-        }
+         echo $this->M_Siswa->pass_reset($data,$where);
     }
  
 

@@ -73,12 +73,50 @@ class M_Siswa extends CI_Model {
         return $this->db->count_all_results();
     }
 
-    public function update_data($id_user,$data,$table){
-        $this->db->where($id_user);
-      $this->db->update($table,$data);
+    public function update_student($data,$where){
+        $this->db->where('Id',$where);
+        $success = $this->db->update('tbl_student',$data);
+        if ($success) {
+            return '1';
+        } else {
+            return '0';
+        }
     }
    public function show_data(){
     return $this->db->get('tbl_student');
+   }
+
+   public function delete($where){
+    $this->db->where('Id',$where);       
+    if ($this->db->delete('tbl_student')) {
+        $where1 = $this->input->post('nim');
+        $this->db->where('reg_number',$where1);
+       if ( $this->db->delete('tbl_users')) {
+           return '1';
+       } else {
+           return '0';
+       }
+    } else {
+        return '0';
+    }
+   }
+
+   public function add($data){
+    if( $this->db->insert('tbl_student',$data)){
+          return '1';
+      }
+      else{
+          return '0';
+      }
+   }
+
+   public function pass_reset($data,$where){
+    $this->db->where('reg_number',$where);
+    if(  $this->db->update('tbl_users',$data)){
+        echo '1';
+    }else{
+        echo '2';
+    }
    }
  
 }
