@@ -56,39 +56,6 @@
 </div>
 </div>
 </div>
-<footer class="footer text-center"> 2021 © FryPan Admin brought to you by 
-            </footer>
-            <!-- ============================================================== -->
-            <!-- End footer -->
-            <!-- ============================================================== -->
-        </div>
-        <!-- ============================================================== -->
-        <!-- End Page wrapper  -->
-        <!-- ============================================================== -->
-    </div>
-    <!-- ============================================================== -->
-    <!-- End Wrapper -->
-    <!-- ============================================================== -->
-    <!-- ============================================================== -->
-    <!-- All Jquery -->
-    <!-- ============================================================== -->
-    <script src="<?= base_url('assets/plugins/bower_components/jquery/dist/jquery.min.js')?>"></script>
-    <!-- Bootstrap tether Core JavaScript -->
-    <script src="<?= base_url('assets/bootstrap/dist/js/bootstrap.bundle.min.js')?>"></script>
-    <script src="<?= base_url('assets/js/app-style-switcher.js')?>"></script>
-    <script src="<?= base_url('assets/plugins/bower_components/jquery-sparkline/jquery.sparkline.min.js')?>"></script>
-    <!--Wave Effects -->
-    <script src="<?= base_url('assets/js/waves.js')?>"></script>
-    <!--Menu sidebar -->
-    <script src="<?= base_url('assets/js/sidebarmenu.js')?>"></script>
-    <!--Custom JavaScript -->
-    <script src="<?= base_url('assets/js/custom.js')?>"></script>
-    <!--This page JavaScript -->
-    <!--chartis chart-->
-    <script src="<?= base_url('assets/plugins/bower_components/chartist/dist/chartist.min.js')?>"></script>
-    <script src="<?= base_url('assets/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js')?>"></script>
-    <script src="<?= base_url('assets/js/pages/dashboards/dashboard1.js')?>"></script>
-<!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
 
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://cdn.datatables.net/1.11.0/js/jquery.dataTables.min.js"></script>

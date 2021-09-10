@@ -10,6 +10,6 @@
 </head>
 <body>
     <a class="glitch"> 404 Not Found</a>
-    <h3>LOL Nyari apa bosque? mwehehehe</h3>
+    
 </body>
 </html>

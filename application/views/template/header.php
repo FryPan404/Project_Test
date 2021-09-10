@@ -208,6 +208,7 @@ color: #fff;
     
 }
     </style>
+
     
 </head>
 <body>
@@ -219,7 +220,7 @@ color: #fff;
             <?php if ($this->session->userdata('level') == 'admin') {
                 ?>
                     <div class="sidebar-menu">
-                        <ul>
+                        <ul id="side-menu">
                             <li>
                                 <a href="<?php echo base_url('admin/index') ?>" class="active"><span class="las la-home"></span><span>Home</span></a>
                             </li>

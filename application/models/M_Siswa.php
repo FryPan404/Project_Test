@@ -113,9 +113,9 @@ class M_Siswa extends CI_Model {
    public function pass_reset($data,$where){
     $this->db->where('reg_number',$where);
     if(  $this->db->update('tbl_users',$data)){
-        echo '1';
+        return '1';
     }else{
-        echo '2';
+        return '0';
     }
    }
  

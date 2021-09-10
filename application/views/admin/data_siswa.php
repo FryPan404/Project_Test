@@ -147,8 +147,9 @@
             <script src="<?php echo base_url('assets/js/sweetalert2.all.min.js') ?>"></script>
     
  
+            
 <script type="text/javascript">
- 
+ document.addEventListener('contextmenu', event => event.preventDefault());
 var table;
  
 $(document).ready(function() {
